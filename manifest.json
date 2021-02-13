@@ -1,0 +1,23 @@
+{
+  "name": "WebRTC Sniff",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 2,
+  "devtools_page": "index.html",
+  "permissions": [
+    "webRequest",
+    "*://cli.fyi/",
+    "*://*.omegle.com/",
+    "*://*.chat-de.com/*",
+    "*://*.chatrandom.com/*",
+    "*://*.chatroulette.com/*"
+  ],
+  "externally_connectable": {
+    "matches": ["*://*.omegle.com/*", "*://*.chat-de.com/*", "*://*.chatrandom.com/*", "*://*.chatroulette.com/*"]
+  },
+  "content_scripts": [{
+    "js": ["contentscript.js"],
+    "matches": ["*://*.omegle.com/*", "*://*.chat-de.com/*", "*://*.chatrandom.com/*", "*://*.chatroulette.com/*"]
+  }],
+  "web_accessible_resources": ["rtc-proxy.js"]
+}
